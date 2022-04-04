@@ -1,6 +1,11 @@
 v-app
-  v-navigation-drawer(v-model='drawer' app)
   v-app-bar(app)
-    v-app-bar-nav-icon(@click='drawer = !drawer')
-    v-toolbar-title template
+    v-toolbar-title webtool otp
   v-main
+    v-container(fluid dense outlined height="100vh")
+      v-card
+        v-card-title 
+          v-sheet {{code}}
+        v-card-actions
+          v-text-field(outlined dense label="Otp Secret" v-model='secret' type="password" @input="generate" :error-messages="errorMessage")
+      

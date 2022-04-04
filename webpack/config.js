@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
@@ -164,6 +165,9 @@ module.exports = {
     }]
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      buffer: require.resolve('@otplib/preset-browser/buffer.js')
+    }),
     new MiniCssExtractPlugin({
       filename: 'css/[contenthash].css',
       chunkFilename: 'css/[contenthash].css'

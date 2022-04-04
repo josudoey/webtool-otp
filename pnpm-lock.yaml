@@ -4,10 +4,10 @@ specifiers:
   '@babel/core': ^7.17.8
   '@babel/eslint-parser': ^7.17.0
   '@mdi/font': ^6.5.95
+  '@otplib/preset-browser': ^12.0.1
   apply-loader: ^2.0.0
   css-loader: ^6.7.1
   css-minimizer-webpack-plugin: ^3.4.1
-  deepmerge: ^4.2.2
   eslint: ^7.32.0
   eslint-config-standard: ^16.0.3
   eslint-plugin-import: ^2.25.4
@@ -16,9 +16,8 @@ specifiers:
   gh-pages: ^3.2.3
   html-loader: ^3.1.0
   html-webpack-plugin: ^5.5.0
-  jquery: ^3.6.0
   mini-css-extract-plugin: ^2.6.0
-  popper.js: ^1.16.1
+  otplib: ^12.0.1
   portal-vue: ^2.1.7
   pug: ^3.0.2
   pug-plain-loader: ^1.1.0
@@ -36,15 +35,14 @@ specifiers:
 
 dependencies:
   '@mdi/font': 6.5.95
+  '@otplib/preset-browser': 12.0.1
   apply-loader: 2.0.0
   css-loader: 6.7.1_webpack@5.70.0
   css-minimizer-webpack-plugin: 3.4.1_webpack@5.70.0
-  deepmerge: 4.2.2
   html-loader: 3.1.0_webpack@5.70.0
   html-webpack-plugin: 5.5.0_webpack@5.70.0
-  jquery: 3.6.0
   mini-css-extract-plugin: 2.6.0_webpack@5.70.0
-  popper.js: 1.16.1
+  otplib: 12.0.1
   portal-vue: 2.1.7_vue@2.6.14
   pug: 3.0.2
   pug-plain-loader: 1.1.0_pug@3.0.2
@@ -367,6 +365,43 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
+    dev: false
+
+  /@otplib/core/12.0.1:
+    resolution: {integrity: sha512-4sGntwbA/AC+SbPhbsziRiD+jNDdIzsZ3JUyfZwjtKyc/wufl1pnSIaG4Uqx8ymPagujub0o92kgBnB89cuAMA==}
+    dev: false
+
+  /@otplib/plugin-crypto/12.0.1:
+    resolution: {integrity: sha512-qPuhN3QrT7ZZLcLCyKOSNhuijUi9G5guMRVrxq63r9YNOxxQjPm59gVxLM+7xGnHnM6cimY57tuKsjK7y9LM1g==}
+    dependencies:
+      '@otplib/core': 12.0.1
+    dev: false
+
+  /@otplib/plugin-thirty-two/12.0.1:
+    resolution: {integrity: sha512-MtT+uqRso909UkbrrYpJ6XFjj9D+x2Py7KjTO9JDPhL0bJUYVu5kFP4TFZW4NFAywrAtFRxOVY261u0qwb93gA==}
+    dependencies:
+      '@otplib/core': 12.0.1
+      thirty-two: 1.0.2
+    dev: false
+
+  /@otplib/preset-browser/12.0.1:
+    resolution: {integrity: sha512-64Eb6JLRRcER2NuIIVQIVNb3yn4mJLUwN1i3icmmNpTS+r4izwdM3eQs9wbeRjjX46kgfMZqPFYsC9JuGM0TKw==}
+    dev: false
+
+  /@otplib/preset-default/12.0.1:
+    resolution: {integrity: sha512-xf1v9oOJRyXfluBhMdpOkr+bsE+Irt+0D5uHtvg6x1eosfmHCsCC6ej/m7FXiWqdo0+ZUI6xSKDhJwc8yfiOPQ==}
+    dependencies:
+      '@otplib/core': 12.0.1
+      '@otplib/plugin-crypto': 12.0.1
+      '@otplib/plugin-thirty-two': 12.0.1
+    dev: false
+
+  /@otplib/preset-v11/12.0.1:
+    resolution: {integrity: sha512-9hSetMI7ECqbFiKICrNa4w70deTUfArtwXykPUvSHWOdzOlfa9ajglu7mNCntlvxycTiOAXkQGwjQCzzDEMRMg==}
+    dependencies:
+      '@otplib/core': 12.0.1
+      '@otplib/plugin-crypto': 12.0.1
+      '@otplib/plugin-thirty-two': 12.0.1
     dev: false
 
   /@trysound/sax/0.2.0:
@@ -1371,11 +1406,6 @@ packages:
   /deep-is/0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
     dev: true
-
-  /deepmerge/4.2.2:
-    resolution: {integrity: sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==}
-    engines: {node: '>=0.10.0'}
-    dev: false
 
   /default-gateway/6.0.3:
     resolution: {integrity: sha512-fwSOJsbbNzZ/CUFpqFBqYfYNLj1NbMPm8MMCIzHjC83iSJRBEGmDUxU+WP661BaBQImeC2yHwXtz+P/O9o+XEg==}
@@ -2578,10 +2608,6 @@ packages:
       supports-color: 8.1.1
     dev: false
 
-  /jquery/3.6.0:
-    resolution: {integrity: sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==}
-    dev: false
-
   /js-stringify/1.0.2:
     resolution: {integrity: sha1-Fzb939lyTyijaCrcYjCufk6Weds=}
     dev: false
@@ -3007,6 +3033,14 @@ packages:
       word-wrap: 1.2.3
     dev: true
 
+  /otplib/12.0.1:
+    resolution: {integrity: sha512-xDGvUOQjop7RDgxTQ+o4pOol0/3xSZzawTiPKRrHnQWAy0WjhNs/5HdIDJCrqC4MBynmjXgULc6YfioaxZeFgg==}
+    dependencies:
+      '@otplib/core': 12.0.1
+      '@otplib/preset-default': 12.0.1
+      '@otplib/preset-v11': 12.0.1
+    dev: false
+
   /p-limit/1.3.0:
     resolution: {integrity: sha512-vvcXsLAJ9Dr5rQOPk7toZQZJApBl2K4J6dANSsEuh6QI41JYcsS/qhTGa9ErIUUgK3WNQoJYvylxvjqmiqEA9Q==}
     engines: {node: '>=4'}
@@ -3150,11 +3184,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       find-up: 4.1.0
-
-  /popper.js/1.16.1:
-    resolution: {integrity: sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ==}
-    deprecated: You can find the new Popper v2 at @popperjs/core, this package is dedicated to the legacy v1
-    dev: false
 
   /portal-vue/2.1.7_vue@2.6.14:
     resolution: {integrity: sha512-+yCno2oB3xA7irTt0EU5Ezw22L2J51uKAacE/6hMPMoO/mx3h4rXFkkBkT4GFsMDv/vEe8TNKC3ujJJ0PTwb6g==}
@@ -4256,6 +4285,11 @@ packages:
   /text-table/0.2.0:
     resolution: {integrity: sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=}
     dev: true
+
+  /thirty-two/1.0.2:
+    resolution: {integrity: sha1-TKL//AKlEpDSdEueP1V2k8prYno=}
+    engines: {node: '>=0.2.6'}
+    dev: false
 
   /thunky/1.1.0:
     resolution: {integrity: sha512-eHY7nBftgThBqOyHGVN+l8gF0BucP09fMo0oO/Lb0w1OF80dJv+lDVpXG60WMQvkcxAkNybKsrEIE3ZtKGmPrA==}

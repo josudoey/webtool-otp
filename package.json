@@ -1,5 +1,5 @@
 {
-  "name": "webtool-template",
+  "name": "webtool-otp",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/josudoey/webtool-template.git"
+    "url": "git+https://github.com/josudoey/webtool-otp.git"
   },
   "author": "Joey Fang",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/josudoey/webtool-template/issues"
+    "url": "https://github.com/josudoey/webtool-otp/issues"
   },
-  "homepage": "https://github.com/josudoey/webtool-template#readme",
+  "homepage": "https://github.com/josudoey/webtool-otp#readme",
   "devDependencies": {
     "@babel/core": "^7.17.8",
     "@babel/eslint-parser": "^7.17.0",
@@ -34,15 +34,14 @@
   },
   "dependencies": {
     "@mdi/font": "^6.5.95",
+    "@otplib/preset-browser": "^12.0.1",
     "apply-loader": "^2.0.0",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^3.4.1",
-    "deepmerge": "^4.2.2",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
-    "jquery": "^3.6.0",
     "mini-css-extract-plugin": "^2.6.0",
-    "popper.js": "^1.16.1",
+    "otplib": "^12.0.1",
     "portal-vue": "^2.1.7",
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
